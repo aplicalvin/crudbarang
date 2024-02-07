@@ -18,7 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $sql = "INSERT INTO $table (kode, nama_brg, satuan, jumlah, tgl_beli, harga) VALUES ('$kode', '$nama_brg', '$satuan', '$jumlah', '$tgl_beli', '$harga')";
 
   if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    // Redirect to index.php
+    header("Location: index.php");
+    exit(); // Ensure no further output is sent
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }

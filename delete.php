@@ -12,7 +12,9 @@ $id = $_GET['id'];
 $sql = "DELETE FROM $table WHERE id=$id";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Record deleted successfully";
+      // Redirect to index.php
+      header("Location: index.php");
+      exit(); // Ensure no further output is sent
 } else {
   echo "Error deleting record: " . $conn->error;
 }

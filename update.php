@@ -18,7 +18,9 @@ $harga = $_POST['harga'];
 $sql = "UPDATE $table SET kode='$kode', nama_brg='$nama_brg', satuan='$satuan', jumlah='$jumlah', tgl_beli='$tgl_beli', harga='$harga' WHERE id=$id";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Record updated successfully";
+      // Redirect to index.php
+      header("Location: index.php");
+      exit(); // Ensure no further output is sent
 } else {
   echo "Error updating record: " . $conn->error;
 }
