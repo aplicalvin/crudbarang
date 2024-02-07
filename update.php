@@ -1,23 +1,27 @@
 <?php
 include 'config.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST['id'];
-    $nama_barang = $_POST['nama_barang'];
+$conn = new mysqli($host, $username, $password, $database);
 
-    $sql = "UPDATE barang SET nama_barang='$nama_barang' WHERE id=$id";
-
-    if ($conn->query($sql) === TRUE) {
-        header("Location: index.php");
-        exit();
-    } else {
-        echo "Error updating record: " . $conn->error;
-    }
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
 
-$id = $_GET['id'];
-$sql = "SELECT * FROM barang WHERE id=$id";
-$result = $conn->query($sql);
-$row = $result->fetch_assoc();
+$id = $_POST['id'];
+$kode = $_POST['kode'];
+$nama_brg = $_POST['nama_brg'];
+$satuan = $_POST['satuan'];
+$jumlah = $_POST['jumlah'];
+$tgl_beli = $_POST['tgl_beli'];
+$harga = $_POST['harga'];
+
+$sql = "UPDATE $table SET kode='$kode', nama_brg='$nama_brg', satuan='$satuan', jumlah='$jumlah', tgl_beli='$tgl_beli', harga='$harga' WHERE id=$id";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Record updated successfully";
+} else {
+  echo "Error updating record: " . $conn->error;
+}
+
 $conn->close();
 ?>

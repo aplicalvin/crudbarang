@@ -3,6 +3,7 @@ $host = "localhost";
 $username = "root";
 $password = "Passwd123";
 $database = "data_barang";
+$table = "barang";
 
 $conn = new mysqli($host, $username, $password, $database);
 
