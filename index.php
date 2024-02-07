@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD PHP Bootstrap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
+    <style>
         .btn-primary {
             background-color: #4CAF50; /* Green */
             border: none;
@@ -23,23 +23,23 @@
 
     <!-- Modal Tambah Barang -->
     <div class="modal fade" id="tambahBarangModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Tambah Barang</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form action="create.php" method="post">
-                <div class="mb-3">
-                    <label for="nama_barang" class="form-label">Nama Barang</label>
-                    <input type="text" class="form-control" id="nama_barang" name="nama_barang" required>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tambah Barang</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <button type="submit" class="btn btn-primary">Simpan</button>
-            </form>
-          </div>
+                <div class="modal-body">
+                    <form action="create.php" method="post">
+                        <div class="mb-3">
+                            <label for="nama_barang" class="form-label">Nama Barang</label>
+                            <input type="text" class="form-control" id="nama_barang" name="nama_barang" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <table class="table">
@@ -79,25 +79,24 @@
 
     <!-- Modal Edit Barang -->
     <div class="modal fade" id="editBarangModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Edit Barang</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form id="editForm" action="update.php" method="post">
-                <input type="hidden" id="edit_id" name="id">
-                <div class="mb-3">
-                    <label for="edit_nama_barang" class="form-label">Nama Barang</label>
-                    <input type="text" class="form-control" id="edit_nama_barang" name="nama_barang" required>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Barang</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <button type="submit" class="btn btn-primary">Update</button>
-            </form>
-          </div>
+                <div class="modal-body">
+                    <form id="editForm" action="update.php" method="post">
+                        <input type="hidden" id="edit_id" name="id">
+                        <div class="mb-3">
+                            <label for="edit_nama_barang" class="form-label">Nama Barang</label>
+                            <input type="text" class="form-control" id="edit_nama_barang" name="nama_barang" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
-      
     </div>
 </div>
 
